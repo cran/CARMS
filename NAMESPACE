@@ -1,0 +1,30 @@
+useDynLib(CARMS, .registration = TRUE)
+importFrom(Rcpp, evalCpp)
+#exportPattern("^[[:alpha:]]+")
+
+importFrom("graphics", "abline", "axis", "curve", "legend", "lines",
+		 "par", "plot", "plot.default", "points", "title", "rect")
+importFrom("stats", "rexp", "smooth.spline")
+importFrom("utils", "modifyList")
+importFrom("grDevices", "dev.new")
+importFrom("methods", "is")
+importFrom("diagram", "plotmat")
+
+export(
+	carms.make,
+	carms.state,
+	carms.base,	
+	carms.arrow,
+	diagram.carms,
+	simulate.carms,
+	simulate,
+	matP,
+#	StochasticChain,
+#	RungeKutta,
+#	BackwardDifference,
+	plot.carms,
+	examples.carms,
+	examples,
+diagram
+)
+S3method(plot, carms)
